@@ -76,16 +76,27 @@ def load_config(file_path, config_type):
                 except yaml.YAMLError as e:
                     raise ValueError(f"Invalid YAML file: {e}") from e
             elif config_type == "ini":
-                # Implement INI parsing if needed. For now, raise an exception
-                raise ValueError("INI format is not yet supported.")
+                # INI has no nesting, so the diff view is section name to
+                # a flat dict of its keys. Values stay strings, which is
+                # why an ini 1 and a yaml 1 will diff; that is the format,
+                # not a parsing shortcut.
+                import configparser
+                parser_ini = configparser.ConfigParser()
+                try:
+                    parser_ini.read_file(f)
+                except configparser.Error as e:
+                    raise ValueError(f"Invalid INI file: {e}") from e
+                return {s: dict(parser_ini[s]) for s in parser_ini.sections()}
             else:
                 logging.error(f"Unsupported configuration type: {config_type}")
                 return None
     except FileNotFoundError as e:
         raise FileNotFoundError(f"File not found: {file_path}") from e
-    except Exception as e:
-        logging.error(f"Error loading config file: {e}")
-        return None
+    except ValueError:
+        # Parse errors are raised as ValueError above. The old catch-all
+        # below this one swallowed them and returned None, so the caller
+        # could not tell bad input from an unsupported type.
+        raise
 
 
 def validate_config(config_data, schema_path):
@@ -153,8 +164,10 @@ def write_diff(diff, output_file):
             for line in diff:
                 f.write(line + "\n")
         logging.info(f"Diff written to: {output_file}")
+        return True
     except Exception as e:
         logging.error(f"Error writing diff to file: {e}")
+        return False
 
 
 def main():
@@ -194,7 +207,8 @@ def main():
 
     if diff:
         if args.output:
-            write_diff(diff, args.output)
+            if not write_diff(diff, args.output):
+                sys.exit(1)
         else:
             for line in diff:
                 print(line)
