@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # cc-DiffConfig
 Compares two configuration files (e.g., JSON, YAML, INI) and highlights the differences, showing additions, deletions, and modifications using difflib. Can be used to track config drift. - Focused on Tools that audit system or application configurations against predefined security benchmarks (e.g., CIS benchmarks, custom policies). These tools parse configuration files and compare them to a set of rules or schemas to identify deviations and potential security misconfigurations.
 
