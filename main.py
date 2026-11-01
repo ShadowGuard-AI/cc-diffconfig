@@ -82,6 +82,10 @@ def load_config(file_path, config_type):
                 # not a parsing shortcut.
                 import configparser
                 parser_ini = configparser.ConfigParser()
+                # ConfigParser lowercases option names as it reads and
+                # the sections view below omits the DEFAULT section, so
+                # an ini file's defaults never reach the diff and a
+                # name's original casing is lost before comparing.
                 try:
                     parser_ini.read_file(f)
                 except configparser.Error as e:
@@ -133,6 +137,12 @@ def validate_config(config_data, schema_path):
         return False
 
 
+# The diff runs over a JSON dump of the parsed values, so formatting,
+# comments, and key order in the source files are invisible by design,
+# which is the point of parsing first. One sharp edge survives: YAML
+# loads dates as date objects, which json.dumps cannot serialise, so
+# a config carrying a date value stops this function with a TypeError
+# that main does not catch, and the run ends in a traceback.
 def diff_configs(config1, config2):
     """
     Compares two configuration dictionaries and returns a diff.
@@ -205,6 +215,9 @@ def main():
 
     diff = diff_configs(config1, config2)
 
+    # When the configs are identical and an output path was given, no
+    # file is written at all. A diff file left at that path by an
+    # earlier run survives untouched and reads like a current result.
     if diff:
         if args.output:
             if not write_diff(diff, args.output):
