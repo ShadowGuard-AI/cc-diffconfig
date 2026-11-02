@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 26" width="100%" role="img" aria-label="Running tape divider, short">
+<rect x="470" y="7" width="260" height="12" fill="#a02c30"/>
+<g stroke="#f3ead6" stroke-width="2.4"><line x1="510" y1="9" x2="510" y2="17"/><line x1="550" y1="9" x2="550" y2="15"/><line x1="650" y1="9" x2="650" y2="15"/><line x1="690" y1="9" x2="690" y2="17"/></g>
+<circle cx="600" cy="13" r="11" fill="#c39a3f" stroke="#8c6c28" stroke-width="2"/><circle cx="600" cy="13" r="4" fill="#8c6c28"/>
+</svg>

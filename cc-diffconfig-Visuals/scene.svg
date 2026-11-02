@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" role="img" aria-label="The fitting room in three planes: dusk deepening at the window, a gilt highlight travelling down the ledger entries while the brass scales dip once at a found difference, the hanging tape tag turning slowly">
+<rect x="0" y="0" width="1200" height="360" fill="#e9dfc6"/>
+<rect x="880" y="30" width="240" height="220" fill="#5a6d96">
+<animate attributeName="fill" values="#5a6d96;#33436a;#5a6d96" dur="24s" repeatCount="indefinite"/></rect>
+<rect x="880" y="30" width="240" height="220" fill="none" stroke="#1c1a17" stroke-width="6"/>
+<polygon points="880,30 1010,30 996,250 880,250" fill="#33261f"/>
+<g><rect x="330" y="120" width="330" height="150" fill="#faf6e8" stroke="#a89a78" stroke-width="2"/>
+<line x1="495" y1="120" x2="495" y2="270" stroke="#a89a78" stroke-width="2"/>
+<g stroke="#b3a888" stroke-width="2"><line x1="348" y1="146" x2="478" y2="146"/><line x1="348" y1="170" x2="478" y2="170"/><line x1="348" y1="194" x2="478" y2="194"/><line x1="348" y1="218" x2="478" y2="218"/><line x1="348" y1="242" x2="478" y2="242"/><line x1="512" y1="146" x2="642" y2="146"/><line x1="512" y1="170" x2="642" y2="170"/><line x1="512" y1="194" x2="642" y2="194"/><line x1="512" y1="218" x2="642" y2="218"/><line x1="512" y1="242" x2="642" y2="242"/></g>
+<rect x="344" y="136" width="300" height="12" fill="#c39a3f" opacity="0.55">
+<animate attributeName="y" values="136;136;160;184;208;232;232;136" keyTimes="0;0.1;0.25;0.4;0.55;0.7;0.9;1" dur="16s" repeatCount="indefinite"/></rect></g>
+<g>
+<animateTransform attributeName="transform" type="rotate" values="0 770 150;-1.6 770 150;-1.6 770 150;0 770 150" keyTimes="0;0.52;0.66;1" dur="16s" repeatCount="indefinite"/>
+<line x1="706" y1="150" x2="834" y2="150" stroke="#b08a3e" stroke-width="5"/>
+<line x1="706" y1="150" x2="694" y2="182" stroke="#b08a3e" stroke-width="2"/><line x1="706" y1="150" x2="718" y2="182" stroke="#b08a3e" stroke-width="2"/>
+<path d="M688 182 A18 10 0 0 0 724 182" fill="none" stroke="#b08a3e" stroke-width="4"/>
+<line x1="834" y1="150" x2="822" y2="182" stroke="#b08a3e" stroke-width="2"/><line x1="834" y1="150" x2="846" y2="182" stroke="#b08a3e" stroke-width="2"/>
+<path d="M816 182 A18 10 0 0 0 852 182" fill="none" stroke="#b08a3e" stroke-width="4"/></g>
+<line x1="770" y1="270" x2="770" y2="150" stroke="#b08a3e" stroke-width="6"/>
+<g>
+<polygon points="66,60 102,60 110,268 84,282 58,268" fill="#a02c30"/>
+<g stroke="#f3ead6" stroke-width="3"><line x1="66" y1="92" x2="84" y2="92"/><line x1="66" y1="122" x2="78" y2="122"/><line x1="67" y1="152" x2="84" y2="152"/><line x1="68" y1="182" x2="79" y2="182"/><line x1="69" y1="212" x2="85" y2="212"/><line x1="70" y1="242" x2="81" y2="242"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 84 282;28 84 282;0 84 282;-28 84 282;0 84 282" dur="16s" repeatCount="indefinite"/>
+<polygon points="70,284 98,284 102,318 84,334 66,318" fill="#b08a3e" stroke="#e0be6e" stroke-width="2"/></g></g>
+<rect x="0" y="300" width="1200" height="60" fill="#54402c"/>
+</svg>
