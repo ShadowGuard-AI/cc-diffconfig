@@ -3,102 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>cc-diffconfig: Corsetier's Fitting Room Diplomacy</title>
-<meta name="description" content="Compares two configuration files in JSON, YAML, or INI and highlights additions, deletions, and modifications using difflib.">
+<title>cc-diffconfig: The Two Panels</title>
 <style>
-@font-face{font-family:'Bakbak One';src:url('fonts/BakbakOne.ttf') format('truetype');}
-@font-face{font-family:'Archivo';src:url('fonts/Archivo.ttf') format('truetype');}
-:root{--cream:#f3ead6;--cream2:#efe3c8;--black:#1c1a17;--red:#a02c30;--gilt:#c39a3f;--dusk:#44557a;--carbon:#b9c0cc}
-*{box-sizing:border-box}body{margin:0;background:var(--black);color:var(--black);font-family:'Archivo',sans-serif;line-height:1.65}
-h1,h2,h3{font-family:'Bakbak One',sans-serif}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;background:var(--black)}
-.hero img.heroimg{width:100%;height:58vh;object-fit:cover;display:block}
-.hero .in{padding:1rem 6vw 2rem;max-width:1120px;margin:0 auto;width:100%;color:var(--cream)}
-.hero .in h1{color:var(--cream)}
-.logo{width:210px;background:var(--cream);padding:8px}
-main{padding:0 6vw 3rem;max-width:1120px;margin:0 auto}
-nav{display:flex;gap:.9rem;flex-wrap:wrap;margin:1.2rem 0}
-.case{display:inline-block;text-decoration:none;font-family:'Bakbak One',sans-serif;font-size:.92rem;color:var(--cream);padding:.6rem 1.25rem;background:linear-gradient(160deg,#3a332a,#241f19);border:2px solid #0e0c0a;border-radius:46% 54% 52% 48%/58% 60% 40% 42%;box-shadow:inset 0 2px 0 rgba(224,190,110,.0);position:relative;transition:box-shadow .15s,transform .25s}
-.case:hover{box-shadow:inset 0 3px 0 #e0be6e}
-.case:hover::after{content:'';position:absolute;right:10px;top:-7px;width:12px;height:16px;background:#b08a3e;clip-path:polygon(15% 0,85% 0,100% 70%,50% 100%,0 70%)}
-.case:active{transform:translateY(3px)}
-.case:focus-visible{outline:3px solid var(--gilt);outline-offset:2px}
-.case::before{content:none}
-a{color:#6d5316}
-a::before{content:'';display:inline-block;width:19px;height:11px;margin-right:.45em;vertical-align:0;background:radial-gradient(circle at 30% 100%,#b08a3e 32%,transparent 34%),radial-gradient(circle at 70% 100%,#b08a3e 32%,transparent 34%),linear-gradient(#b08a3e,#b08a3e);background-size:100% 100%;background-repeat:no-repeat;clip-path:polygon(50% 0,58% 55%,100% 55%,88% 100%,12% 100%,0 55%,42% 55%)}
-a:hover::before{transform:rotate(-4deg)}
-.box{background:var(--cream);border-top:14px solid var(--cream2);outline:2px solid #0e0c0a;box-shadow:0 0 0 8px #2a251e;padding:.4rem 1.5rem 1.3rem;margin:2.1rem 0;position:relative}
-.box::after{content:'';position:absolute;top:8px;right:10px;width:20px;height:26px;background:#ded2ae;border:1px solid #a89a78;transform:rotate(8deg)}
-.tape{height:14px;margin:2.2rem 0;background:repeating-linear-gradient(90deg,var(--cream) 0 3px,transparent 3px 64px),var(--red);position:relative}
-.tape::after{content:'';position:absolute;left:50%;top:1px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--gilt);box-shadow:inset 0 0 0 2px #8c6c28}
-pre{background:#efe7d0;color:var(--black);padding:1rem;overflow-x:auto;font-size:.93rem;border-left:5px solid var(--gilt)}
-.pin{display:flex;gap:1rem;padding:.5rem 0;border-bottom:1px solid #d8cba6}
-.pin b{font-family:'Bakbak One',sans-serif;min-width:130px;color:#6d5316}
-.copy{background:var(--carbon);color:var(--black);padding:.3rem 1.2rem 1rem;margin:1.2rem 0;box-shadow:0 5px 0 -2px rgba(185,192,204,.45)}
-.blank{border-bottom:2px solid #c9b98d;height:2.2rem;margin:.6rem 0;color:#6d5316;font-size:.92rem}
-footer{padding:1rem 6vw 2.4rem;max-width:1120px;margin:0 auto;color:var(--cream)}
+@font-face { font-family: "Krub"; src: url("fonts/Krub-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Krub"; src: url("fonts/Krub-700.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Trirong"; src: url("fonts/Trirong-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Trirong"; src: url("fonts/Trirong-700.woff2") format("woff2"); font-weight: 700; }
+:root {
+  --cream: #faf5ea; --table: #f3ecdc; --ink: #2f3242; --soft: #6d6a5e;
+  --indigo: #33477d; --rose: #c48a8a; --mustard: #d9a51f; --line: #ddd3ba; --card: #ffffff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--table); color: var(--ink); font-family: "Trirong", serif; line-height: 1.55; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 20px 64px; }
+header.hero { text-align: center; padding: 52px 0 8px; }
+img.hero-logo { width: min(430px, 82vw); border-radius: 10px; box-shadow: 0 10px 34px rgba(47,50,66,.22); }
+h1, h2 { font-family: "Krub", sans-serif; font-weight: 700; line-height: 1.15; }
+h1 { font-size: clamp(30px, 5.4vw, 50px); margin: 26px 0 6px; }
+.tagline { color: var(--soft); font-size: 19px; margin: 0 auto; max-width: 660px; }
+.btns { margin: 22px 0 6px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+a.btn { font-family: "Krub", sans-serif; text-decoration: none; padding: 11px 22px; border-radius: 999px; border: 2px solid var(--indigo); color: var(--indigo); background: transparent; }
+a.btn.solid { background: var(--mustard); border-color: var(--mustard); color: #2f3242; }
+figure { margin: 30px 0; }
+figure img { width: 100%; border-radius: 10px; display: block; box-shadow: 0 8px 28px rgba(47,50,66,.18); }
+figcaption { color: var(--soft); font-size: 15px; text-align: center; margin-top: 9px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 34px 0; }
+.fact { background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--rose); border-radius: 8px; padding: 14px 16px; }
+.fact b { display: block; font-family: "Krub", sans-serif; font-weight: 700; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; color: var(--indigo); margin-bottom: 4px; }
+section { margin: 38px 0; }
+h2 { font-size: 27px; margin: 0 0 12px; border-bottom: 2px solid var(--line); padding-bottom: 7px; }
+code, pre { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+pre { background: #2c3040; color: #f3ecdd; padding: 15px 18px; border-radius: 8px; overflow-x: auto; font-size: 14.5px; }
+table { border-collapse: collapse; width: 100%; background: var(--card); }
+th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+th { font-family: "Krub", sans-serif; font-weight: 700; background: var(--cream); }
+.hold { background: #fdf6e0; border: 1px solid #e8d9a8; border-left: 6px solid var(--mustard); border-radius: 8px; padding: 16px 20px; }
+.hold h2 { border: none; padding: 0; }
+.hold ul { margin: 8px 0 4px; padding-left: 20px; }
+footer { margin-top: 52px; border-top: 2px solid var(--line); padding-top: 16px; color: var(--soft); font-size: 14.5px; text-align: center; }
 </style>
 </head>
 <body>
+<div class="wrap">
 <header class="hero">
-<img class="heroimg" src="assets/intro-banner.png" alt="A fitting room between clients: a red fitting tape hanging at the left, a dress form in a half pinned toile, brass scales and an open ledger on the worktable, no readable mark">
-<div class="in">
-<img class="logo" src="assets/logo.png" alt="A seat red measuring tape unrolled in a loose S from a small gilt case, a blank brass tag at its end, above the name cc-diffconfig">
-<h1>cc-diffconfig</h1>
-<p>The fitting room's day book opened flat. Two configurations are brought in like two sittings of the same client, laid against each other, and every difference is entered where anyone returning later can find it.</p>
-<nav>
-<a class="case" href="#comparison">The Comparison Itself</a>
-<a class="case" href="#hand">Taking It in Hand</a>
-<a class="case" href="#fittings">The Fittings</a>
-<a class="case" href="#verified">The Verified Fittings</a>
-<a class="case" href="#blank">The One Honest Blank</a>
-</nav>
-</div>
+  <img class="hero-logo" src="assets/logo.png" alt="The overlapping corner of two quilt panels: cream and indigo squares with faded rose stitching and one single mustard square standing out at the overlap">
+  <h1>cc-diffconfig</h1>
+  <p class="tagline">The Two Panels. A command line differ that lays two configuration files side by side and picks out every square where they differ: additions, deletions, and modifications, shown using difflib.</p>
+  <div class="btns">
+    <a class="btn solid" href="https://github.com/ShadowGuard-AI/cc-diffconfig">The repository</a>
+    <a class="btn" href="https://github.com/ShadowGuard-AI/cc-diffconfig/blob/main/main.py">main.py</a>
+  </div>
 </header>
-<main>
-<section class="box" id="comparison"><h2>Entry One: The Comparison Itself</h2>
-<h3>ADDITIONS, DELETIONS, MODIFICATIONS</h3>
-<p>cc-DiffConfig compares two configuration files in JSON, YAML, or INI and highlights the differences, showing additions, deletions, and modifications using difflib, and it can be taken up to track config drift. This entry claims that much and not a sentence more.</p>
-<p><a class="case" href="#hand">BRING THE TWO FILES IN</a></p>
+
+<figure>
+  <img src="assets/intro-banner.png" alt="The edges of two quilt panels close up where their square grids meet, one changed square picked out in mustard against the indigo and cream around it, the stitching sharp">
+  <figcaption>Where the two grids meet, the one square that changed.</figcaption>
+</figure>
+
+<div class="facts">
+  <div class="fact"><b>Formats</b>JSON, YAML, or INI configuration files; <code>--type</code> defaults to yaml</div>
+  <div class="fact"><b>The comparison</b>Additions, deletions, and modifications, shown using difflib</div>
+  <div class="fact"><b>Optional gate</b>A JSON schema file for validating the config files before diffing</div>
+  <div class="fact"><b>Dependencies</b>jsonschema and PyYAML</div>
+</div>
+
+<section>
+  <h2>Usage</h2>
+  <pre>python3 main.py [--type json|yaml|ini] [--output OUTPUT] [--schema SCHEMA] FILE1 FILE2</pre>
+  <table>
+    <tr><th>Option</th><th>What it does</th></tr>
+    <tr><td><code>FILE1</code>, <code>FILE2</code></td><td>Paths to the two configuration files to compare.</td></tr>
+    <tr><td><code>--type</code></td><td>Type of configuration files: <code>json</code>, <code>yaml</code>, or <code>ini</code>. Default: <code>yaml</code>.</td></tr>
+    <tr><td><code>--output</code>, <code>-o</code></td><td>Output file to write the diff to.</td></tr>
+    <tr><td><code>--schema</code></td><td>Path to a JSON schema file for validating the config files before diffing.</td></tr>
+    <tr><td><code>-h</code></td><td>Show help message and exit.</td></tr>
+  </table>
 </section>
-<div class="tape"></div>
-<section class="box" id="hand"><h2>Entry Two: Taking It in Hand</h2>
-<p>The install block copied exactly as the README gives it, clone from the ShadowGuard-AI account, step into the directory, pip install from requirements.txt:</p>
-<pre>git clone https://github.com/ShadowGuard-AI/cc-diffconfig
-cd cc-diffconfig
-pip install -r requirements.txt</pre>
-<p>The working line in full:</p>
-<pre>python3 main.py [--type json|yaml|ini] [--output OUTPUT] [--schema SCHEMA] FILE1 FILE2</pre>
+
+<figure>
+  <img src="assets/banner.png" alt="A long work table holding two large quilt panels side by side, their cream, indigo, and faded rose squares in matching grids, hands smoothing the nearer panel flat and one mustard square standing out on it">
+  <figcaption>Two finished pieces, compared square by square in the open.</figcaption>
+</figure>
+
+<section class="hold">
+  <h2>Verified behavior</h2>
+  <ul>
+    <li>A JSON sample differing in one value and adding one key produced a unified diff with the changed and added lines.</li>
+    <li>With <code>--output</code>, the diff was written to the named file.</li>
+    <li>With <code>--schema</code>, a config that fails the schema exits 1 and no diff is produced. A failing schema means no diff exists; that is the recorded behavior, not a fault.</li>
+    <li>Identical configs exit 0 and, when <code>--output</code> is given, no file is written at all, so a diff file left by an earlier run survives untouched.</li>
+    <li>A missing input file exits 1.</li>
+  </ul>
 </section>
-<div class="tape"></div>
-<section class="box" id="fittings"><h2>Entry Three: The Fittings, One Ruled Line per Control</h2>
-<div class="pin"><b>-h</b><span>Shows help and leaves. Help stands at the head of the list, as the README lists it after the two file paths.</span></div>
-<div class="pin"><b>FILE1</b><span>Path to the first configuration file.</span></div>
-<div class="pin"><b>FILE2</b><span>Path to the second configuration file.</span></div>
-<div class="pin"><b>--type</b><span>Type of configuration files: json, yaml, or ini. Defaults to yaml.</span></div>
-<div class="pin"><b>--output, -o</b><span>Names a file to write the diff to.</span></div>
-<div class="pin"><b>--schema</b><span>Names a JSON schema file for validating the configuration files before any diffing is done.</span></div>
-<p><a class="case" href="#verified">CHECK AGAINST THE SCHEMA FIRST</a></p>
-</section>
-<div class="tape"></div>
-<section class="box" id="verified"><h2>Entry Four: The Verified Fittings</h2>
-<p>Each result entered as its own line, in the order the README reports them:</p>
-<div class="pin"><b>One value changed, one key added</b><span>A JSON sample differing in one value and adding one key produced a unified diff carrying the changed and added lines.</span></div>
-<div class="pin"><b>With the output option</b><span>The diff was written to the named file.</span></div>
-<div class="copy"><h3>Carbon copy</h3><p>With a schema, a configuration that fails it exits 1 and no diff is produced. The run stops before any diff exists.</p></div>
-<div class="copy"><h3>Carbon copy</h3><p>Identical configurations exit 0 and, when an output file is named, no file is written at all, so a diff left by an earlier run survives untouched. The book words the quiet outcome exactly so: NOTHING HAD CHANGED, NOTHING WRITTEN.</p></div>
-<div class="pin"><b>A missing input file</b><span>Exits 1.</span></div>
-</section>
-<div class="tape"></div>
-<section class="box" id="blank"><h2>Entry Five: The One Honest Blank in the Book</h2>
-<div class="blank">No sample diff is printed in the README itself, for all that the verified entry describes one. The line stays blank.</div>
-<div class="blank">No line says whether the type setting may differ between the two files or must cover both alike. The line stays blank.</div>
-<p>Both absences are entered as blank ruled lines, so a visitor sees the shape of what is not yet written down.</p>
-</section>
-</main>
+
 <footer>
-<div class="tape"></div>
-<p>Licence entry, as the book closes: MIT License, see LICENSE.</p>
+  <p>cc-diffconfig is distributed under the MIT License; see LICENSE in the repository. Site type is set in Krub and Trirong, self-hosted under the SIL Open Font License.</p>
 </footer>
+</div>
 </body>
 </html>
