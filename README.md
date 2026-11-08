@@ -1,10 +1,10 @@
-![The fitting room between clients: a red fitting tape hanging at the left, a dress form in a half pinned toile, brass scales level and an open ledger ruled but unread, no readable mark anywhere](intro-banner.png)
+![The edges of two quilt panels close up where their square grids meet, one changed square picked out in mustard against the indigo and cream around it, the stitching sharp](intro-banner.png)
 
 # cc-diffconfig
 
-![Early evening in the fitting room, the tape hanging beside the dark mirror and the name lettered in gilt across the mirror's lower corner](banner.png)
+![A long work table holding two large quilt panels side by side, their cream, indigo, and faded rose squares in matching grids, hands smoothing the nearer panel flat and one mustard square standing out on it](banner.png)
 
-![Seat red measuring tape unrolled in a loose S from a small gilt case with a blank brass tag at its end, the heading plate](logo.png)
+![The overlapping corner of two quilt panels: cream and indigo squares with faded rose stitching and one single mustard square standing out at the overlap, the heading plate](logo.png)
 
 ![Fitting room scene in three planes: dusk deepening at the window, a gilt highlight travelling down the ledger entries, the hanging tape tag turning slowly](scene.svg)
 
