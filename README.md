@@ -10,14 +10,13 @@
 
 
 
-# cc-DiffConfig
 Compares two configuration files (JSON, YAML, or INI) and highlights the differences, showing additions, deletions, and modifications using difflib. Can be used to track config drift.
 
 
 ![Running tape divider](sep-heavy.svg)
 
 ## Install
-```
+```sh
 git clone https://github.com/ShadowGuard-AI/cc-diffconfig
 cd cc-diffconfig
 pip install -r requirements.txt
@@ -27,7 +26,7 @@ pip install -r requirements.txt
 ![Running tape divider](sep-light.svg)
 
 ## Usage
-```
+```sh
 python3 main.py [--type json|yaml|ini] [--output OUTPUT] [--schema SCHEMA] FILE1 FILE2
 ```
 
@@ -62,4 +61,4 @@ python3 main.py [--type json|yaml|ini] [--output OUTPUT] [--schema SCHEMA] FILE1
 ![Running tape divider](sep-heavy.svg)
 
 ## License
-MIT License, see LICENSE.
+MIT License, see [LICENSE](LICENSE).
